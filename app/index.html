@@ -36,16 +36,12 @@
     <![endif]-->
 
     <!-- Navigation -->
+    <header>
     <nav class="navbar navbar-default navbar-fixed-top" ng-include="'views/header.html'" ng-controller="HeaderCtrl"></nav>
+    </header>
 
-    <!-- Header -->
-    <!-- <header> -->
-        <div class="container">
-            <!-- <div class="intro-text" ng-include="'views/main.html'">
-            </div> -->
-            <div class="intro-text" ui-view="">
-            </div>
-        </div>
+    <div ui-view="" class="container-fluid">
+    </div>
   <!--   </header> -->
     <!-- jQuery -->
     <div id="footer" ng-include="'views/footer.html'" ng-controller="FooterCtrl"></div>

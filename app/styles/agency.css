@@ -7,6 +7,26 @@
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-align: center;
+    background-attachment: scroll;
+    background: #f47747 url(../images/back.jpg) no-repeat;
+    background-position: top center;
+    background-repeat: none;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+body:before {
+    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
+    content: " ";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
 
 .text-muted {
@@ -230,6 +250,14 @@ fieldset[disabled] .btn-xl.active {
     background-color: #fec503;
 }
 
+.intro-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -300px;
+    margin-top: -15px;
+}
+
 .intro-text input[type="text"]{
     width: 600px;
     height: 50px;
@@ -314,26 +342,9 @@ fieldset[disabled] .btn-xl.active {
     }
 }
 
-header:before{
-    background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
-    content: " ";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
-
 header {
-    text-align: center;
-    background-attachment: scroll;
-    background-image: url(../images/header-bg.jpg);
-    background-position: center center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    height: 75px;
+    background: rgba( 64, 64, 64, 0.8);
 }
 
 header .intro-text {
@@ -863,11 +874,24 @@ ul.social-buttons li a:active {
     position: absolute;
     top: 25px;
     right: 25px;
-    width: 75px;
-    height: 75px;
     background-color: transparent;
     cursor: pointer;
+    width: 25px;
+    height: 25px;
+    z-index: 2;
 }
+
+.portfolio-modal .close-modal:before{
+    font-family: FontAwesome;
+    content: '\f00d';
+    font-size: 18px;
+    color: #404040;
+    padding: 8px 10px;
+    width: 25px;
+    height: 25px;
+    border: solid 1px #404040;
+    border-radius: 50%;
+} 
 
 .portfolio-modal .close-modal:hover {
     opacity: .3;
@@ -955,8 +979,33 @@ body {
 
 #portfolioModal1 .modal-content{
     padding: 0;
+    background: #404040;
+    color: #fff;
 }
 .video-player{
     background: #404040;
-    padding: 15px 0;
+    padding: 25px 0;
+}
+.video-player .pre:before, .video-player .next:before{
+    font-family: FontAwesome;
+    content: '\f049';
+    font-size: 18px;
+    color: #ccc;
+    margin: 0 20px;
+}
+
+.video-player .next:before{
+    content: '\f050';
+}
+
+.p-0{
+    padding: 0;
+}
+
+section{
+    padding: 20px 0;
+}
+
+.navbar-default{
+    padding: 12px 0;
 }
