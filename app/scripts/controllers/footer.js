@@ -20,8 +20,8 @@ angular.module('hackathon27112015TeamDApp')
 	    		email : email,
 	    		pass : pass
 	    	};
-	    	// var datas = DataSource.signupData( data );
-    		// console.log('datas ', datas);
+	    	var datas = DataSource.signupData( data );
+    		console.log('datas ', datas);
     	}
     	
     	
@@ -36,10 +36,14 @@ angular.module('hackathon27112015TeamDApp')
     		};
     		DataSource.loginData( data );
 
+    		$location.path();
+
+    		//$state.go('main', {url: '/'});
+/*
 
     		$timeout(function () {
 			    $location.path('/');
-			});
+			});*/
     	}
     }
 

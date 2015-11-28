@@ -10,14 +10,8 @@ angular.module('hackathon27112015TeamDApp')
 	        	return $http.get('');
 	      	},
 	      	signupData : function(data) {
-	      		$http.post('https://api.github.com/users/peterbe/gists', data)
-	      		.then(function(response) {
-	      			//return 'signup success';
-	      			console.log('signup success' , response)
-	      		})
-	      		.catch(function(reponse) {
-	      			console.log('signup failed', response);
-	      		});
+	      		$http.post('http://192.168.0.94:8000/users/', data);
+	      		
 	      	},
 	      	loginData : function(data) {
 	      		$cookies.put('user_email', data.loginemail);
