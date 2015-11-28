@@ -8,7 +8,7 @@ body {
     overflow-x: hidden;
     font-family: Helvetica,Arial,sans-serif;
     background-attachment: scroll;
-    background: #f47747 url(../images/back.jpg) no-repeat;
+    background: #61839f url(../images/back.jpg) no-repeat;
     background-position: top center;
     background-repeat: none;
     -webkit-background-size: cover;
@@ -261,10 +261,9 @@ fieldset[disabled] .btn-xl.active {
 
 .search-sec{
     position: relative;
-    width: 660px;
+    width: 640px;
     height: 50px;
     background: #fff;
-    border-radius: 15px;
     margin: 0 auto;
 }
 
@@ -275,6 +274,9 @@ fieldset[disabled] .btn-xl.active {
     color: #ccc;
     background: #fff;
     cursor: pointer;
+}
+#loginModal .modal-content, #signupModal .modal-content{
+    text-align: center;
 }
 #loginModal input, #signupModal input{
     width: 100%;
@@ -996,4 +998,9 @@ section{
 .navbar-default{
     padding: 12px 0;
     position: relative;
+}
+
+.left-wrap .title{
+    font-size: 18px;
+    padding: 10px 0;
 }
