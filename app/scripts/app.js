@@ -35,9 +35,15 @@ angular
       });*/
 
     $stateProvider
-      .state('index', {
+      .state('main', {
         url: '/',
-        templateUrl: 'index.html'
+        templateUrl: 'views/main.html',
+        controller: "MainCtrl"
+      })
+      .state('search-result', {
+        url: "/search-result",
+        templateUrl: "views/tmpl/search-result.html",
+        controller: "SearchCtrl"
       });
 
   }]);
