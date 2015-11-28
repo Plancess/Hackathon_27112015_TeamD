@@ -6,8 +6,7 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    text-align: center;
+    font-family: Helvetica,Arial,sans-serif;
     background-attachment: scroll;
     background: #f47747 url(../images/back.jpg) no-repeat;
     background-position: top center;
@@ -16,17 +15,6 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-
-
-body:before {
-    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
-    content: " ";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
 }
 
 .text-muted {
@@ -72,7 +60,6 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -1008,4 +995,5 @@ section{
 
 .navbar-default{
     padding: 12px 0;
+    position: relative;
 }
