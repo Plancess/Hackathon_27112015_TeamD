@@ -38,37 +38,7 @@
 
 
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" ui-sref="index">Start Bootstrap</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="hidden">
-                        <a ui-sref="main"></a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#loginModal" data-toggle="modal">Login</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#signupModal" data-toggle="modal">Signup</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container-fluid -->
-    </nav>
+    <nav class="navbar navbar-default navbar-fixed-top" ng-include="'views/header.html'"></nav>
 
     <!-- Header -->
     <header>
@@ -78,56 +48,7 @@
         </div>
     </header>
     <!-- jQuery -->
-    <div class="portfolio-modal modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h3>Login</h3>
-                            <div class="col-xs-12"><input type="text" placeholder="Username/ Email" /></div>
-                            <div class="col-xs-12"><input type="password" placeholder="Password" /></div>
-                            <a href="" class="btns">Login</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="portfolio-modal modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-content">
-            <div class="close-modal" data-dismiss="modal">
-                <div class="lr">
-                    <div class="rl">
-                    </div>
-                </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
-                        <div class="modal-body">
-                            <!-- Project Details Go Here -->
-                            <h3>Sign Up</h3>
-                            <div class="col-xs-12"><input type="text" placeholder="First Name" /></div>
-                            <div class="col-xs-12"><input type="text" placeholder="Last Name" /></div>
-                            <div class="col-xs-12"><input type="text" placeholder="Email" /></div>
-                            <div class="col-xs-12"><input type="password" placeholder="Password" /></div>
-                            <a href="" class="btns">Sign Up</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <div id="footer" ng-include="'views/footer.html'" ng-controller="FooterCtrl"></div>
 
 
 
@@ -212,6 +133,7 @@
 
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/footer.js"></script>
         <script src="scripts/controllers/search.js"></script>
 
         <script src="scripts/factory/datasource.js"></script>

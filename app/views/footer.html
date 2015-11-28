@@ -1,0 +1,93 @@
+<div class="portfolio-modal modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <!-- Project Details Go Here -->
+                        <h3>Login</h3>
+                        <form name="loginForm" novalidate>
+
+                            <div class="col-xs-12">
+                                <input type="text" placeholder="Email" name="loginemail" ng-model="loginemail" required>
+                                <span style="color:red" ng-show="loginForm.$dirty && loginForm.$invalid">
+                                    <span ng-show="loginForm.loginemail.$error.required">Email is required.</span>
+                                    <span ng-show="loginForm.loginemail.$error.email">Invalid email address.</span>
+                                </span>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <input type="password" placeholder="Password" name="loginPass" ng-model="loginPass" required>
+                                <span style="color:red" ng-show="loginForm.$dirty && loginForm.$invalid">
+                                    <span ng-show="loginForm.loginPass.$error.required">Password is required.</span>
+                                </span>
+                            </div>
+                            <button type="submit" class="btns" ng-disabled="loginForm.$dirty && loginForm.$invalid || login.email.$dirty && login.email.$invalid" ng-click="loginData(email, loginPass)">Login</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-modal modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+                <div class="rl">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="modal-body">
+                        <!-- Project Details Go Here -->
+                        <h3>Sign Up</h3>
+                        <form name="signupForm" novalidate>
+
+                            <div class="col-xs-12">
+                                <input type="text" placeholder="First Name" name="firstName" ng-model="firstName" required>
+                                <span style="color:red" ng-show="signupForm.$dirty && signupForm.$invalid">
+                                    <span ng-show="signupForm.firstName.$error.required">First Name is required.</span>
+                                </span>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <input type="text" placeholder="Last Name" name="lastName" ng-model="lastName" required>
+                                <span style="color:red" ng-show="signupForm.$dirty && signupForm.$invalid">
+                                    <span ng-show="signupForm.lastName.$error.required">Last Name is required.</span>
+                                </span>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <input type="email" name="signupemail" ng-model="signupemail" placeholder="Email" required>
+                                <span style="color:red" ng-show="signupForm.$dirty && signupForm.$invalid">
+                                    <span ng-show="signupForm.signupemail.$error.required">Email is required.</span>
+                                    <span ng-show="signupForm.signupemail.$error.email">Invalid email address.</span>
+                                </span>
+                            </div>
+
+                            <div class="col-xs-12">
+                                <input type="password" placeholder="Password" name="signupPass" ng-model="signupPass" required>
+                                <span style="color:red" ng-show="signupForm.$dirty && signupForm.$invalid">
+                                    <span ng-show="signupForm.signupPass.$error.required">Password is required.</span>
+                                </span>
+                            </div>
+
+                            <button type="submit" class="btns" ng-disabled="signupForm.$dirty && signupForm.$invalid || signup.email.$dirty && signup.email.$invalid" ng-click="submitsignupData(firstName, lastName, signupemail, signupPass)">Sign Up</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
