@@ -6,27 +6,15 @@
 
 body {
     overflow-x: hidden;
-    font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
-    text-align: center;
+    font-family: Helvetica,Arial,sans-serif;
     background-attachment: scroll;
-    background: #f47747 url(../images/back.jpg) no-repeat;
+    background: #61839f url(../images/back.jpg) no-repeat;
     background-position: top center;
     background-repeat: none;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-}
-
-
-body:before {
-    background: rgba(0, 0, 0, 0.5) none repeat scroll 0 0;
-    content: " ";
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
 }
 
 .text-muted {
@@ -72,7 +60,6 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 }
 
@@ -274,10 +261,9 @@ fieldset[disabled] .btn-xl.active {
 
 .search-sec{
     position: relative;
-    width: 660px;
+    width: 640px;
     height: 50px;
     background: #fff;
-    border-radius: 15px;
     margin: 0 auto;
 }
 
@@ -288,6 +274,9 @@ fieldset[disabled] .btn-xl.active {
     color: #ccc;
     background: #fff;
     cursor: pointer;
+}
+#loginModal .modal-content, #signupModal .modal-content{
+    text-align: center;
 }
 #loginModal input, #signupModal input{
     width: 100%;
@@ -1008,4 +997,10 @@ section{
 
 .navbar-default{
     padding: 12px 0;
+    position: relative;
+}
+
+.left-wrap .title{
+    font-size: 18px;
+    padding: 10px 0;
 }
