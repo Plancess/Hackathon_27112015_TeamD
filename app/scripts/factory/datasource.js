@@ -4,7 +4,7 @@
 	Datasource Factory
 */
 angular.module('hackathon27112015TeamDApp')
-  .factory('DataSource', function ($http) {
+  .factory('DataSource', ['$http', '$cookies', function ($http, $cookies) {
     	return {
     		searchData: function() {
 	        	return $http.get('');
@@ -18,6 +18,10 @@ angular.module('hackathon27112015TeamDApp')
 	      		.catch(function(reponse) {
 	      			console.log('signup failed', response);
 	      		});
+	      	},
+	      	loginData : function(data) {
+	      		$cookies.put('user_email', data.loginemail);
+	      		$cookies.put('user_password', data.loginPass);	      		
 	      	}
     	}
-  });
+  }]);

@@ -13,14 +13,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-            <li class="hidden">
-                <a ui-sref="main"></a>
-            </li>
-            <li>
+            <li ng-if="!logged_in">
                 <a class="page-scroll" href="#loginModal" data-toggle="modal">Login</a>
             </li>
-            <li>
+            <li ng-if="!logged_in">
                 <a class="page-scroll" href="#signupModal" data-toggle="modal">Signup</a>
+            </li>
+            <li ng-if="logged_in">
+                <a class="page-scroll" href="" data-toggle="modal">Logout</a>
             </li>
         </ul>
     </div>
