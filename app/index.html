@@ -30,21 +30,20 @@
 
     <!-- endbuild -->
   </head>
-  <body id="page-top" class="index" ng-app="hackathon27112015TeamDApp">
+  <body ng-app="hackathon27112015TeamDApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Navigation -->
-    <header>
-    <nav class="navbar navbar-default navbar-fixed-top" ng-include="'views/header.html'" ng-controller="HeaderCtrl"></nav>
-    </header>
+    <header ng-include="'views/header.html'" ng-controller="HeaderCtrl"></header>    
 
-    <div ui-view="" class="container-fluid">
-    </div>
+    <!-- Header -->
+    <div ui-view=""></div>
+
   <!--   </header> -->
     <!-- jQuery -->
-    <div id="footer" ng-include="'views/footer.html'" ng-controller="FooterCtrl"></div>
+    <div ng-include="'views/footer.html'" ng-controller="FooterCtrl"></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -84,7 +83,8 @@
         <script src="js/contact_me.js"></script>
         <script src="js/agency.js"></script>-->
 
-
+        <script src="js/env-config.js"></script>
+        <script src="js/script.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/controllers/main.js"></script>

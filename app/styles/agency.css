@@ -1,20 +1,6 @@
-/*!
- * Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body {
-    overflow-x: hidden;
-    font-family: Helvetica,Arial,sans-serif;
-    background-attachment: scroll;
-    background: #61839f url(../images/back.jpg) no-repeat;
-    background-position: top center;
-    background-repeat: none;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
+    font-family: "Open Sans",sans-serif;
+    font-size: 14px;
 }
 
 .text-muted {
@@ -60,7 +46,7 @@ h4,
 h5,
 h6 {
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .img-centered {
@@ -238,11 +224,7 @@ fieldset[disabled] .btn-xl.active {
 }
 
 .intro-text{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -300px;
-    margin-top: -15px;
+    
 }
 
 .intro-text input[type="text"]{
@@ -333,7 +315,7 @@ fieldset[disabled] .btn-xl.active {
 
 header {
     height: 75px;
-    background: rgba( 64, 64, 64, 0.8);
+    background: #2c2f31;
 }
 
 header .intro-text {
@@ -455,10 +437,14 @@ section h3.section-subheading {
 
 #portfolio .portfolio-item .portfolio-caption {
     margin: 0 auto;
-    padding: 25px;
+    padding: 20px;
     max-width: 400px;
     text-align: center;
     background-color: #fff;
+}
+
+#portfolio .portfolio-item .no-of-views{
+    font-size: 12px;
 }
 
 #portfolio .portfolio-item .portfolio-caption h4 {
@@ -469,8 +455,7 @@ section h3.section-subheading {
 #portfolio .portfolio-item .portfolio-caption p {
     margin: 0;
     font-family: "Droid Serif","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    font-style: italic;
+    font-size: 14px;
 }
 
 #portfolio * {
@@ -480,6 +465,7 @@ section h3.section-subheading {
 @media(min-width:767px) {
     #portfolio .portfolio-item {
         margin: 0 0 30px;
+        padding: 20px 0 0;
     }
 }
 
@@ -773,8 +759,10 @@ section#contact .text-danger {
 }
 
 footer {
-    padding: 25px 0;
+    padding: 20px 0;
     text-align: center;
+    background: #2c2f31;
+    color: #fff;
 }
 
 footer span.copyright {
@@ -924,9 +912,9 @@ body {
 }
 
 #portfolio .portfolio-item{
-    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
-    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0 3px 6px 0 rgba(119, 119, 119, 0.75);
+    -moz-box-shadow: 0 3px 6px 0 rgba(119, 119, 119, 0.75);
+    box-shadow: 0 3px 6px 0 rgba(119, 119, 119, 0.75);
 }
 
 .course-title{
@@ -1003,4 +991,60 @@ section{
 .left-wrap .title{
     font-size: 18px;
     padding: 10px 0;
+}
+
+.search-section{
+    padding: 140px 0;
+    background: url(../images/back.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.product-showcase{
+    padding: 40px 0;
+}
+
+.most-popular{
+    font-size: 24px;
+    margin: 0 0 20px;
+}
+
+.cpybx {
+    border-bottom: 1px solid #434648;
+    border-top: 1px solid #434648;
+    color: #868889;
+    float: left;
+    font: 300 12px "Open Sans",sans-serif;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.cpybx .cpytxtbx {
+    float: left;
+}
+
+.cpybx .pull-right a{
+    font-size: 18px;
+    color: #fff;
+    margin: 0 2px;
+}
+
+.create-course .form-field{
+    margin: 0 0 20px;
+}
+
+.create-course .form-field input[type="text"], .create-course .form-field textarea{
+    width: 100%;
+}
+
+.create-course .form-field input[type="text"]{
+    height: 30px;
+    border-radius: 3px;
+}
+
+.create-course .form-field .hint{
+    font-size: 12px;
+    color: #25a2f9;
 }
