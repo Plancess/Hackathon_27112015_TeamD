@@ -1,0 +1,47 @@
+<section class="create-course">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="course-title">Create Course</div>
+            </div>
+
+            <div class="col-xs-12 form-field">
+                <div class="col-md-2 col-sm-2 col-xs-12"><label>Course Tags</label></div>
+                <div class="col-md-10 col-sm-10 col-xs-12"><input type="text"/>
+                <br/><div class="hint">Multiple value separated by Comma(,).</div>
+                </div>
+            </div>
+            <div class="col-xs-12 form-field">
+                <div class="col-md-2 col-sm-2 col-xs-12"><label>Title</label></div>
+                <div class="col-md-10 col-sm-10 col-xs-12"><input type="text"/></div>
+            </div>
+            <div class="col-xs-12 form-field">
+                <div class="col-md-2 col-sm-2 col-xs-12"><label>Description</label></div>
+                <div class="col-md-10 col-sm-10 col-xs-12"><textarea></textarea></div>
+            </div>
+            <div class="col-xs-12 form-field">
+                <div class="col-md-2 col-sm-2 col-xs-12"><label>Prerequisite</label></div>
+                <div class="col-md-10 col-sm-10 col-xs-12"><textarea></textarea></div>
+            </div>
+            <div class="col-xs-12 form-field">
+                <div class="col-md-2 col-sm-2 col-xs-12"><label>Course Image</label></div>
+                <div class="col-md-10 col-sm-10 col-xs-12"><input type="file"/></div>
+            </div>
+            <div class="col-xs-12 form-field">
+                <div class="col-md-2 col-sm-2 col-xs-12"><label>Video URL's</label></div>
+                <div class="col-md-10 col-sm-10 col-xs-12">
+                    <button ng-click="AddUrlField(fields)"> Add Field </button>
+                    <ul>
+                        <li ng-repeat="i in getNumber(fields) track by $index">
+                            <input value="{{$index + 1}}" type="text" size="40" />
+                            <span class="create-course-del" ng-click="DeleteUrlField($index)">Del</span>
+                        </li>
+                    </ul>                                        
+                </div>
+            </div>
+            <div class="col-xs-12 form-field">
+                <div class="col-md-10 col-md-offset-2 col-sm-offset-2"><a href="" class="btns">Submit</a></div>
+            </div>
+        </div>
+    </div>
+</section>

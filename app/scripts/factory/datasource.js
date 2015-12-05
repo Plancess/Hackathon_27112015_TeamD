@@ -20,13 +20,48 @@ angular.module('hackathon27112015TeamDApp')
 	      		});*/
 	      	},
 	      	loginData : function(data) {
-	      		/*$cookies.put('user_email', data.loginemail);
-	      		$cookies.put('user_password', data.loginPass);	  */    		
 
-	      		$http.post(APP_CONSTANTS.apiEndpoint + '/auth/token/', data)
-	      		.then(function(res) {
+	      		$http({
+					method: 'POST',
+					url: APP_CONSTANTS.apiEndpoint + '/auth/token/',
+					data: data,
+					headers: {'Content-Type': 'application/json'}
+					})
+	      		.success(function() {
+	      			console.log('login success');
+				})
+				.error(function() {
+					console.log('login failed');
+				});
+
+	      		/*$cookies.put('user_email', data.loginemail);
+	      		$cookies.put('user_password', data.loginPass);	  */    	
+
+	      		/*var req = {
+				 	method: 'POST',
+				 	url: APP_CONSTANTS.apiEndpoint + '/auth/token/',
+				 	data: {client_id: "y3jJVGzLMbkNQlbgvIR7gkdV3ZUG5yyHMwn7PJJr",
+client_secret: "vg8TdSyUCaONUtAgTRBR0c41jDAiYaeDB3ssKLAUyAHXZAHHBpgz4tEHL4TgDoh99hReOhb1bnP5UArCRlx8ItN0ywaMNWKY6DpxGWVDZO8Aa9N9VAvgaQBeS7IKhem1",
+grant_type: "password",
+password: "rick@123",
+username: "rick.r@plancess.com"}
+				};
+
+				$http(req).then(function(){
+					console.log('login success');
+				}, 
+				function(){
+					console.log('login failed');
+				});*/
+
+				//var data = JSON.parse( data );
+
+				//console.log( 'post data ::', data ); //\\	
+
+	      		//$http.post(APP_CONSTANTS.apiEndpoint + '/auth/token/', data)
+	      		//.then(function(res, status) {
 	      			//return 'signup success';
-	      			console.log('login success' , res)
+	      			//console.log('login success' , res)
 	      			/*var cookieData = {
 			          'access_token': res.access_token,
 			          'refresh_token': res.refresh_token,
@@ -43,10 +78,10 @@ angular.module('hackathon27112015TeamDApp')
 			        .catch(function(response) {
 			        	console.log('User getting information failed', response);
 			        })*/
-	      		})
+	      		/*})
 	      		.catch(function(res) {
 	      			console.log('login failed', res);
-	      		});
+	      		});*/
 
 	      	}
     	}

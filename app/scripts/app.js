@@ -44,6 +44,11 @@ angular
         url: "/search-result",
         templateUrl: "views/tmpl/search-result.html",
         controller: "SearchCtrl"
+      })
+      .state('create-course', {
+        url: "/create-course",
+        templateUrl: "views/tmpl/create-course.html",
+        controller: "CreateCourseCtrl"
       });
 
   }]);

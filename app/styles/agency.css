@@ -1048,3 +1048,7 @@ section{
     font-size: 12px;
     color: #25a2f9;
 }
+
+.create-course-del{
+    cursor: pointer;
+}
