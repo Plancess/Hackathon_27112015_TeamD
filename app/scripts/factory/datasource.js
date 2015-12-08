@@ -4,7 +4,7 @@
 	Datasource Factory
 */
 angular.module('hackathon27112015TeamDApp')
-  .factory('DataSource', ['$http', '$cookies', function ($http, $cookies) {
+  .factory('DataSource', ['$http', '$cookies', '$location', 'Restangular', function ($http, $cookies, $location, Restangular) {
     	return {
     		searchData: function() {
 	        	return $http.get('');
@@ -21,7 +21,7 @@ angular.module('hackathon27112015TeamDApp')
 	      	},
 	      	loginData : function(data) {
 
-	      		$http({
+	      		/*$http({
 					method: 'POST',
 					url: APP_CONSTANTS.apiEndpoint + '/auth/token/',
 					data: data,
@@ -32,57 +32,81 @@ angular.module('hackathon27112015TeamDApp')
 				})
 				.error(function() {
 					console.log('login failed');
-				});
-
-	      		/*$cookies.put('user_email', data.loginemail);
-	      		$cookies.put('user_password', data.loginPass);	  */    	
-
-	      		/*var req = {
-				 	method: 'POST',
-				 	url: APP_CONSTANTS.apiEndpoint + '/auth/token/',
-				 	data: {client_id: "y3jJVGzLMbkNQlbgvIR7gkdV3ZUG5yyHMwn7PJJr",
-client_secret: "vg8TdSyUCaONUtAgTRBR0c41jDAiYaeDB3ssKLAUyAHXZAHHBpgz4tEHL4TgDoh99hReOhb1bnP5UArCRlx8ItN0ywaMNWKY6DpxGWVDZO8Aa9N9VAvgaQBeS7IKhem1",
-grant_type: "password",
-password: "rick@123",
-username: "rick.r@plancess.com"}
-				};
-
-				$http(req).then(function(){
-					console.log('login success');
-				}, 
-				function(){
-					console.log('login failed');
 				});*/
 
-				//var data = JSON.parse( data );
 
-				//console.log( 'post data ::', data ); //\\	
 
-	      		//$http.post(APP_CONSTANTS.apiEndpoint + '/auth/token/', data)
-	      		//.then(function(res, status) {
-	      			//return 'signup success';
-	      			//console.log('login success' , res)
-	      			/*var cookieData = {
-			          'access_token': res.access_token,
-			          'refresh_token': res.refresh_token,
-			          'token_type': res.token_type
+				$.ajax({
+			      type: "POST",
+			      url: APP_CONSTANTS.apiEndpoint + '/auth/token/',
+			      data: data,
+			      success: function(data) {
+			      	console.log('login success :: ', data);
+			        var cookieData = {
+			          'access_token': data.access_token,
+			          'refresh_token': data.refresh_token,
+			          'token_type': data.token_type,
+			          'login_time' : new Date()
 			        };
-			        $http.get(APP_CONSTANTS.apiEndpoint + '/users/details/', {
-			        	headers: {'Authorization': cookieData.token_type + " " + cookieData.access_token}			        	
-			        })
-			        .then(function(response) {
-			        	cookieData.user_id = response.user_id;
-            			cookieData.email = response.email;
-            			//$cookies.put('myFavorite', 'oatmeal');
-			        })
-			        .catch(function(response) {
-			        	console.log('User getting information failed', response);
-			        })*/
-	      		/*})
-	      		.catch(function(res) {
-	      			console.log('login failed', res);
-	      		});*/
+			        $.ajax({
+			          type: "GET",
+			          url: APP_CONSTANTS.apiEndpoint + "/users/details/",
+			          headers: {
+			            'Authorization': cookieData.token_type + " " + cookieData.access_token
+			          },
+			          contentType: 'application/json',
+			          success: function(data) {
+			            cookieData.user_id = data.user_id;
+			            cookieData.email = data.email;
+			            $cookies.put('user_id', data.user_id);
+			            $cookies.put('user_email', data.email);
+			        	$cookies.put('cookieData', cookieData);
+			        	location.reload();
+			          },
+			          error: function(xhr, status, error) {
+			            console.log('Error with status code', error);
+			          }
+			        });
+			      },
+			      error: function(xhr, status, error) {
+			        console.log('Error with status code', xhr.status);
+			        if (xhr.status === 401) {
+			          $("#loginError").text("Your username and password did not match. Please try again");
+			        }
+			      }
+			    });
+	      	},
 
+	      	isUserLoggedin : function() {
+	      		var logged_in_useremail = $cookies.get('user_email'),
+        			logged_in_userid = $cookies.get('user_id'),
+        			cookieData = $cookies.get('cookieData');;
+	      		if( logged_in_useremail && logged_in_userid && cookieData ) {
+	      			return logged_in_userid;
+	      		} else {
+	      			return false;
+	      		}
+	      	},
+
+	      	createCourse : function(data) {
+				var userid = $cookies.get('user_id');
+
+				// This will do ONE get to /accounts/123/buildings/456/spaces/789
+				//Restangular.one("accounts", 123).one("buildings", 456).one("spaces", 789).get()
+
+				// POST /accounts/123/buildings/456/spaces
+				//Restangular.one("accounts", 123).one("buildings", 456).all("spaces").post({name: "New Space"});
+
+				return Restangular.one("users", userid).all("courses/").post(data);
+	      	},
+
+	      	getmostPopular : function(userid) {
+	      		return Restangular.one('users', userid).all("courses?course_type=home").get({'format':'json'},{}); 
+	      	},
+
+	      	getCourseDetails : function(userid, courseID) {
+	      		return Restangular.one('users', userid).one('courses', courseID).get({'format':'json'},{});
 	      	}
+
     	}
   }]);

@@ -8,14 +8,16 @@
         </div>
     </div>
 </div>
-<div class="product-showcase" id="portfolio">
+
+<div class="product-showcase" id="portfolio" ng-if="logged_in">
     <div class="container">
         <div class="col-xs-12 most-popular">Most Popular</div>
         <div class="row">
             <div class="col-xs-12">
-                <div class="col-md-3 col-sm-6">
+
+                <div class="col-md-3 col-sm-6" ng-repeat="popular in most_popular" ng-if="most_popular">
                     <div class="portfolio-item">
-                        <a href="" class="portfolio-link">
+                        <a ui-sref="course-details({courseID:popular.id})" class="portfolio-link">
                             <div class="portfolio-hover">
                                 <div class="portfolio-hover-content">
                                     <i class="fa fa-plus fa-3x"></i>
@@ -24,32 +26,16 @@
                             <img src="../images/roundicons.png" class="img-responsive" alt="">
                         </a>
                         <div class="portfolio-caption">
-                            <h4>Round Icons</h4>
-                            <p class="text-muted">Graphic Design</p>
-                            <p class="no-of-views text-muted">12,566 Views</p>
+                            <h4>{{popular.course_title}}</h4>
+                            <p class="text-muted">{{popular.prerequisite}}</p>
+                            <p class="no-of-views text-muted">{{popular.tags}}</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-3 col-sm-6">
-                    <div class="portfolio-item">
-                        <a href="" class="portfolio-link">
-                            <div class="portfolio-hover">
-                                <div class="portfolio-hover-content">
-                                    <i class="fa fa-plus fa-3x"></i>
-                                </div>
-                            </div>
-                            <img src="../images/roundicons.png" class="img-responsive" alt="">
-                        </a>
-                        <div class="portfolio-caption">
-                            <h4>Round Icons</h4>
-                            <p class="text-muted">Graphic Design</p>
-                            <p class="no-of-views text-muted">12,566 Views</p>
-                        </div>
-                    </div>
-                </div>
+                <div ng-hide="most_popular">You have not created any course till now.</div>
 
-                <div class="col-md-3 col-sm-6">
+                <!-- <div class="col-md-3 col-sm-6">
                     <div class="portfolio-item">
                         <a href="" class="portfolio-link">
                             <div class="portfolio-hover">
@@ -65,9 +51,9 @@
                             <p class="no-of-views text-muted">12,566 Views</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
-                <div class="col-md-3 col-sm-6">
+                <!-- <div class="col-md-3 col-sm-6">
                     <div class="portfolio-item">
                         <a href="" class="portfolio-link">
                             <div class="portfolio-hover">
@@ -83,7 +69,26 @@
                             <p class="no-of-views text-muted">12,566 Views</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
+
+                <!-- <div class="col-md-3 col-sm-6">
+                    <div class="portfolio-item">
+                        <a href="" class="portfolio-link">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content">
+                                    <i class="fa fa-plus fa-3x"></i>
+                                </div>
+                            </div>
+                            <img src="../images/roundicons.png" class="img-responsive" alt="">
+                        </a>
+                        <div class="portfolio-caption">
+                            <h4>Round Icons</h4>
+                            <p class="text-muted">Graphic Design</p>
+                            <p class="no-of-views text-muted">12,566 Views</p>
+                        </div>
+                    </div>
+                </div> -->
+                
             </div>
         </div>
     </div>

@@ -42,6 +42,10 @@
                                     <span ng-show="loginForm.loginPass.$error.required" class="err-msg">Password is required.</span>
                                 </span>
                             </div>
+
+                            <div class="col-xs-12">
+                                <div id="loginError"></div>
+                            </div>
                             <button type="submit" class="btns" ng-disabled="loginForm.$dirty && loginForm.$invalid || login.email.$dirty && login.email.$invalid" ng-click="loginData(loginemail, loginPass)">Login</button>
 
                         </form>
@@ -100,6 +104,40 @@
                             <button type="submit" class="btns" ng-disabled="signupForm.$dirty && signupForm.$invalid || signup.email.$dirty && signup.email.$invalid" ng-click="submitsignupData(firstName, lastName, signupemail, signupPass)">Sign Up</button>
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-9 p-0">                        
+                    <div class="video-player col-xs-12">
+                        <div class="pull-right">
+                            <a href="" class="pre"></a>
+                            <a href="" class="next"></a>
+                        </div>
+                    </div>
+                    <div class="video-container">
+                        <iframe width="100%" height="550" src="https://www.youtube.com/embed/79G2v-i4GQw" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-lg-3 video-info">
+                    <div class="course-title">Beginner with HTML</div>
+                    <ul class="lecture-list">
+                        <li><a href="">Lecture 1 : Introduction</a></li>
+                        <li><a href="">Lecture 2 : Editors</a></li>
+                        <li><a href="">Lecture 3 : Basic</a></li>
+                        <li><a href="">Lecture 4 : Elements</a></li>
+                        <li><a href="">Lecture 5 : Attributes</a></li>
+                        <li><a href="">Lecture 6 : Headings</a></li>
+                        <li><a href="">Lecture 7 : Paragraphs</a></li>
+                        <li><a href="">Lecture 8 : Styles</a></li>
+                    </ul>
                 </div>
             </div>
         </div>

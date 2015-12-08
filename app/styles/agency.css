@@ -1,6 +1,7 @@
 body {
     font-family: "Open Sans",sans-serif;
     font-size: 14px;
+    background: #f8f8f8;
 }
 
 .text-muted {
@@ -391,6 +392,7 @@ section h3.section-subheading {
 #portfolio .portfolio-item {
     right: 0;
     margin: 0 0 15px;
+    background: #fff;
 }
 
 #portfolio .portfolio-item .portfolio-link {
@@ -469,118 +471,6 @@ section h3.section-subheading {
     }
 }
 
-.timeline {
-    position: relative;
-    padding: 0;
-    list-style: none;
-}
-
-.timeline:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 40px;
-    width: 2px;
-    margin-left: -1.5px;
-    background-color: #f1f1f1;
-}
-
-.timeline>li {
-    position: relative;
-    margin-bottom: 50px;
-    min-height: 50px;
-}
-
-.timeline>li:before,
-.timeline>li:after {
-    content: " ";
-    display: table;
-}
-
-.timeline>li:after {
-    clear: both;
-}
-
-.timeline>li .timeline-panel {
-    float: right;
-    position: relative;
-    width: 100%;
-    padding: 0 20px 0 100px;
-    text-align: left;
-}
-
-.timeline>li .timeline-panel:before {
-    right: auto;
-    left: -15px;
-    border-right-width: 15px;
-    border-left-width: 0;
-}
-
-.timeline>li .timeline-panel:after {
-    right: auto;
-    left: -14px;
-    border-right-width: 14px;
-    border-left-width: 0;
-}
-
-.timeline>li .timeline-image {
-    z-index: 100;
-    position: absolute;
-    left: 0;
-    width: 80px;
-    height: 80px;
-    margin-left: 0;
-    border: 7px solid #f1f1f1;
-    border-radius: 100%;
-    text-align: center;
-    color: #fff;
-    background-color: #fed136;
-}
-
-.timeline>li .timeline-image h4 {
-    margin-top: 12px;
-    font-size: 10px;
-    line-height: 14px;
-}
-
-.timeline>li.timeline-inverted>.timeline-panel {
-    float: right;
-    padding: 0 20px 0 100px;
-    text-align: left;
-}
-
-.timeline>li.timeline-inverted>.timeline-panel:before {
-    right: auto;
-    left: -15px;
-    border-right-width: 15px;
-    border-left-width: 0;
-}
-
-.timeline>li.timeline-inverted>.timeline-panel:after {
-    right: auto;
-    left: -14px;
-    border-right-width: 14px;
-    border-left-width: 0;
-}
-
-.timeline>li:last-child {
-    margin-bottom: 0;
-}
-
-.timeline .timeline-heading h4 {
-    margin-top: 0;
-    color: inherit;
-}
-
-.timeline .timeline-heading h4.subheading {
-    text-transform: none;
-}
-
-.timeline .timeline-body>p,
-.timeline .timeline-body>ul {
-    margin-bottom: 0;
-}
 
 @media(min-width:768px) {
     .timeline:before {
@@ -693,71 +583,6 @@ aside.clients img {
     margin: 50px auto;
 }
 
-section#contact {
-    background-color: #222;
-    background-image: url(../images/map-image.png);
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-section#contact .section-heading {
-    color: #fff;
-}
-
-section#contact .form-group {
-    margin-bottom: 25px;
-}
-
-section#contact .form-group input,
-section#contact .form-group textarea {
-    padding: 20px;
-}
-
-section#contact .form-group input.form-control {
-    height: auto;
-}
-
-section#contact .form-group textarea.form-control {
-    height: 236px;
-}
-
-section#contact .form-control:focus {
-    border-color: #fed136;
-    box-shadow: none;
-}
-
-section#contact::-webkit-input-placeholder {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #bbb;
-}
-
-section#contact:-moz-placeholder {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #bbb;
-}
-
-section#contact::-moz-placeholder {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #bbb;
-}
-
-section#contact:-ms-input-placeholder {
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
-    color: #bbb;
-}
-
-section#contact .text-danger {
-    color: #e74c3c;
-}
-
 footer {
     padding: 20px 0;
     text-align: center;
@@ -862,11 +687,11 @@ ul.social-buttons li a:active {
     font-family: FontAwesome;
     content: '\f00d';
     font-size: 18px;
-    color: #404040;
+    color: #f1f1f1;
     padding: 8px 10px;
     width: 25px;
     height: 25px;
-    border: solid 1px #404040;
+    border: solid 1px #f1f1f1;
     border-radius: 50%;
 } 
 
@@ -918,11 +743,15 @@ body {
 }
 
 .course-title{
-    font-size: 38px;
+    font-size: 28px;
+    margin: 0 0 15px;
 }
 
 .instruct .name, .instruct .instructor{
     font-size: 21px;
+}
+.instruct .name{
+color: #25a2f9;
 }
 
 .curriculum{
@@ -933,11 +762,14 @@ body {
 .lecture-list{
     list-style: none;
     padding: 0;
+    margin: 20px 0 0;
 }
 
 .lecture-list li{
-    padding: 10px 0 0 30px;
+    padding: 10px 0 10px 40px;
     position: relative;
+    background: #FFF;
+    margin: 0 0 10px;
 }
 
 .lecture-list li:before{
@@ -947,11 +779,20 @@ body {
     color: #666;
     position: absolute;
     top: 9px;
-    left: 0;
+    left: 10px;
 }
 
 .lecture-list li a{
+    font-size: 18px;
     color: #666;
+}
+
+.lecture-list li a{
+    text-decoration: none;
+}
+
+.time-span{
+    font-size: 14px;
 }
 
 #portfolioModal1 .modal-content{
@@ -1037,6 +878,11 @@ section{
 
 .create-course .form-field input[type="text"], .create-course .form-field textarea{
     width: 100%;
+    border: solid 1px #ccc;
+}
+
+.create-course .form-field textarea{
+    resize:none;
 }
 
 .create-course .form-field input[type="text"]{
@@ -1049,6 +895,6 @@ section{
     color: #25a2f9;
 }
 
-.create-course-del{
-    cursor: pointer;
+#portfolioModal1 .course-title{
+    margin: 16px 0 15px;
 }

@@ -30,38 +30,15 @@ angular.module('hackathon27112015TeamDApp')
     //login data
     $scope.loginData = function(loginemail, loginPass) {
     	if(loginemail && loginPass) {
-    		var jsondata,
-                data = {
+    		var data = {
         			username : loginemail,
         			password : loginPass,
                     grant_type: "password",
                     client_id: APP_CONSTANTS.client_id,
                     client_secret: APP_CONSTANTS.client_secret
         		};
-
-            //jsondata = $.param(data);
-
     		DataSource.loginData( data );
-
-    		//$location.path();
-
-
-            //console.log('APP_CONSTANTS == ', APP_CONSTANTS);
-
-
-
-
-    		//$state.go('main', {url: '/'});
-/*
-
-    		$timeout(function () {
-			    $location.path('/');
-			});*/
     	}
     }
 
-    /*function init() {
-    	$location.path();
-    }
-*/
   }]);

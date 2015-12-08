@@ -1,0 +1,25 @@
+<section id="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="course-title">{{course_title}}</div>
+                <div class="instruct">
+                    <span class="name">{{course_description}}</span>
+                </div>
+            </div>
+
+            <div class="col-xs-12">
+                <div class="curriculum">Prerequisite : {{prerequisite}}</div>
+                <ul class="lecture-list col-md-8 col-xs-12 col-sm-8">
+                    <li ng-repeat="video in allvideos">
+                        <a ui-sref="course-details({courseID:courseID})" data-target="#portfolioModal1" data-toggle="modal" ng-click="getVideoByIndex($index)">Lecture {{$index + 1}}
+                            <div class="time-span">10:30</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    

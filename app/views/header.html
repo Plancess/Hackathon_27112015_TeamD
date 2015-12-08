@@ -17,11 +17,14 @@
                 <!-- <li class="hidden">
                     <a href="#page-top"></a>
                 </li> -->
-                <li>
+                <li ng-if="!logged_in">
                     <a class="page-scroll" href="#loginModal" data-toggle="modal">Login</a>
                 </li>
-                <li>
+                <li ng-if="!logged_in">
                     <a class="page-scroll" href="#signupModal" data-toggle="modal">Signup</a>
+                </li>
+                <li ng-if="logged_in">
+                    <a class="page-scroll" href="" ng-click="logOut()" data-toggle="modal">Logout</a>
                 </li>
             </ul>
         </div>

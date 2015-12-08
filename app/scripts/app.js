@@ -16,9 +16,12 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'restangular',
+    'imageupload',
+    'LocalStorageModule'
   ])
-  .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', 'RestangularProvider', function ($stateProvider, $urlRouterProvider, RestangularProvider) {
     $urlRouterProvider.otherwise("/");
     //$routeProvider
       /*.when('/', {
@@ -49,6 +52,13 @@ angular
         url: "/create-course",
         templateUrl: "views/tmpl/create-course.html",
         controller: "CreateCourseCtrl"
+      })
+      .state('course-details', {
+        url: "/course-details/:courseID",
+        templateUrl: "views/tmpl/course-details.html",
+        controller: "CourseDetailsCtrl"
       });
+
+      RestangularProvider.setBaseUrl(APP_CONSTANTS.apiEndpoint);
 
   }]);
